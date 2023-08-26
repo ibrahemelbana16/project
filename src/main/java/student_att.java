@@ -1,7 +1,4 @@
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 @Entity
 public class student_att {
@@ -11,6 +8,13 @@ public class student_att {
     )
     private int id;
     private Date date;
+    @ManyToOne
+    @JoinColumn
+            (
+                    name = "student_fk"
+
+            )
+    private student student;
 
     public student_att() {
     }
